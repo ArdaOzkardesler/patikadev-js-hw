@@ -1,4 +1,3 @@
-const CLOSE = `<span class="close">×</span>`;
 let ulDOM = document.querySelector("#list");
 let liDOM = document.querySelectorAll("li");
 
@@ -13,9 +12,10 @@ for (let index = 0; index < liDOM.length; index++) {
 
 function newElement() {
   let newTaskItem = document.querySelector("#task");
-  let itemToAdd = document.createElement("li");
+
   if (newTaskItem.value.length != 0 && /\S/.test(newTaskItem.value)) {
     $(".success").toast("show");
+    let itemToAdd = document.createElement("li");
     itemToAdd.innerHTML = `${newTaskItem.value}`;
     ulDOM.append(itemToAdd);
     let closeButton = document.createElement("span");
